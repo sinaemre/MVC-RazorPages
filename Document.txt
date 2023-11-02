@@ -1,0 +1,3 @@
+﻿Razor Page Nedir?
+
+Razor View Engine, ASP .NET projelerimizde tasarım sayfaları içerisinde(Front-End, View) HTML, CSS, JavaScript kodlarının yanında C# kullanmamızı sağlamaktadır. Örneğin, aynı sayfa içerisindeki HTML, CSS, JS kodları istemci(grafik kullanıcı arayüzü - GUI) tarafında çalışırken C# kodlarımız sunucu tarafında çalıştırılır. HTML dilinde eklediğiniz bir yorum satırı site kaynak kodları arasında tüm kullanıcılar tarafından görülebilirken, Razor ile eklediğiniz C# açıklama/tyorum satırları sunucu tarafında işlem gördüğü için kullanıcılar tarafından görülemez. Sadece uygulamayı geliştiren yazılımcılar görebilir.  

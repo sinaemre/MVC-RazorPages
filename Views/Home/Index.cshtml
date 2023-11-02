@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!--HTML Yorum Satırı-->
+@*
+    Razor Yorum Satırı
+*@
+
+<!--C# Kodu eklemek için @{} kullanmanız gerekir.-->
+@{
+    string ad = "Sina";
+    string soyad = "Emre";
+    string meslek = "Yazılım Uzmanı";
+}
+
+<div class="text-center">
+    <b>Adı: </b> @ad <br />
+    <b>Soyadı: </b> @soyad <br />
+    <b>Meslek: </b> @meslek
+</div>
+@*
+    Yukarıdaki koddan anlaşılacağı üzere Razor Kod bloğunda oluşturulan değişkenlere blok dışarısında erişmek için "@" işaretini kullanmanız yeterli. 
+*@
+<hr />
+<h2>
+    @(string.Format("Adı: {0} - Soyadı: {1} - Mesleği: {2}",ad,soyad,meslek))
+</h2>
+<hr />
+<h2>Razor'da Döngüler ve Kontrol Yapıları</h2>
+@*
+    Razor ile C# döngüleri ve kontrol yapılarını HTML tasarım sayfası içerisinde rahatlıkla kullanabilirisiniz.
+*@
+@{
+    string[] kullanicilar = new string[] { "Sina Emre", "Test Kullanıcı", "Ömer Faruk", "Mahmut Tuncer" };
+}
+
+<h3>Kullanıcılar</h3>
+<ul>
+    @foreach (var kullanici in kullanicilar)
+    {
+        if (kullanici == "Sina Emre")
+        {
+            <li><b>@kullanici</b></li>
+        }
+        else
+        {
+            <li>@kullanici</li>        }
+    }
+</ul> <!--Unordered List => ul-->
+      <!--Ordered List => ol-->
+
+<hr />
+
+
+<h3>Soru: 1'den 10'e kadar olan sayıları sıralanmış liste(ol)'de gösteriniz. NOT(2 ve 5 olmasın)</h3>
+<ol>
+    @for (int i = 0; i < 11; i++)
+    {
+        if (i != 2 && i != 5)
+        {
+            <li><b><i>@i</i></b></li>
+        }
+    }
+</ol>
+
+<hr />
+
+<h3>Soru: Bugünün tarihi 2012'de büyükse 'Bugünün tarihi 2012'den büyüktür', değilse 'Bugünün tarihi 2012'den küçüktür' yazsın.(Kalın ve Italik)</h3>
+@if (DateTime.Now.Year > 2012)
+{
+    <h4 class="text-danger"><b><i>Bugünün tarihi 2012'den büyüktür.</i></b></h4>
+}
+else
+{
+    <h4 class="text-danger"><b><i>Bugünün tarihi 2012'den küçüktür.</i></b></h4>
+}
+
+@for(int i = 0; i < 10; i++)
+{
+    <img src="https://fotolifeakademi.com/uploads/2020/04/manzara-fotografi-cekmek.jpg" width="250px" height="250px" />
+    
+}
